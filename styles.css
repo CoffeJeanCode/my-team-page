@@ -1,0 +1,122 @@
+:root {
+  --background: #fafafa;
+  --pt-serif: "PT Serif", serif;
+  --poppin: "Poppins", sans-serif;
+}
+
+html,
+body {
+  background: var(--background);
+  /* background: red */
+}
+
+.container {
+  min-width: 375px;
+  max-width: calc(100vw - 15%);
+  margin: 6.25rem auto;
+}
+
+.team-info {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.team-info__title {
+  font-family: var(--pt-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 3rem;
+}
+
+.team-info__who {
+  max-width: 31.25rem;
+  font-size: 1.125rem;
+  font-family: var(--poppin);
+}
+
+.team-info__who__title {
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.team-info__who__description {
+  max-width: 27.438rem;
+  font-weight: 300;
+}
+
+.team-people {
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+.team-people__card:nth-child(2),
+.team-people__card:nth-child(5) {
+  transform: translateY(20%);
+}
+
+.team-people__card {
+  position: relative;
+  padding: 2rem 1rem;
+}
+
+.team-people__card__image {
+  --width: 238px;
+  max-width: var(--width);
+}
+
+.team-people__card__profession {
+  --width: 190px;
+  margin: 0;
+  width: var(--width);
+  position: absolute;
+  top: calc(var(--width) / 2 + 1.8rem);
+  left: 173px;
+  transform: rotate(90deg);
+  text-transform: uppercase;
+}
+
+.team-people__card__name {
+  font-family: var(--poppin);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 6rem 0.5rem;
+  }
+  .team-info {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .team-people {
+    margin: 1rem 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-people__card__image {
+    --width: 172px;
+  }
+  .team-people__card__profession {
+    --width: 190px;
+    width: var(--width);
+    left: 110px;
+  }
+
+  .team-people__card:nth-child(2),
+  .team-people__card:nth-child(5) {
+    transform: translateY(0%);
+  }
+
+  .team-people__card:nth-child(2),
+  .team-people__card:nth-child(4),
+  .team-people__card:nth-child(6) {
+    transform: translateY(25%);
+  }
+}
